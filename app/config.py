@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     environment: str = "development"
     max_upload_size_mb: int = 50
 
-    class Config:
+    class ConfigDict:
         env_file = ".env"
         env_file_encoding = "utf-8"
 
