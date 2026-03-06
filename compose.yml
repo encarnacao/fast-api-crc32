@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/home/appuser/src/app
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=info
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+      --reload-dir /home/appuser/src/app
